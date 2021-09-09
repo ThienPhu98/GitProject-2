@@ -1,4 +1,6 @@
-public class main {
+package Week1.IntroductionToJava;
+
+public class Variable {
     public static void main(String[] args) {
         int i = 10;
         float f = 20.5f;

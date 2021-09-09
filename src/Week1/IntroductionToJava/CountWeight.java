@@ -1,9 +1,8 @@
-package com.codegym;
+package Week1.IntroductionToJava;
 
 import java.util.Scanner;
 
-public class Main {
-
+public class CountWeight {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         double weight, height, bmi;

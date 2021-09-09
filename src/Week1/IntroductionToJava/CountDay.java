@@ -1,11 +1,10 @@
-package com.codegym;
+package Week1.IntroductionToJava;
 
 import java.util.Scanner;
 
-public class Main {
-
+public class CountDay {
     public static void main(String[] args) {
-	    Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         System.out.print("Which month that you want to counts days?");
         int month = scanner.nextInt();
@@ -34,8 +33,7 @@ public class Main {
                 daysInMonth = "";
                 break;
         }
-    if (!daysInMonth.equals("")) System.out.printf("The month '%d' has %s days!",month,daysInMonth);
-    else System.out.print("Invalid input!");
-
+        if (!daysInMonth.equals("")) System.out.printf("The month '%d' has %s days!",month,daysInMonth);
+        else System.out.print("Invalid input!");
     }
 }

@@ -1,9 +1,8 @@
-package com.codegym;
+package Week1.IntroductionToJava;
 
 import java.util.Scanner;
 
-public class Main {
-
+public class Operator {
     public static void main(String[] args) {
         float width;
         float height;

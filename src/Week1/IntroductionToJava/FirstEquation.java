@@ -1,9 +1,8 @@
-package com.codegym;
+package Week1.IntroductionToJava;
 
 import java.util.Scanner;
 
-public class Main {
-
+public class FirstEquation {
     public static void main(String[] args) {
         System.out.println("Linear Equation Resolver");
         System.out.println("Given a equation as 'a * x + b = c', please enter constants: ");
@@ -27,6 +26,5 @@ public class Main {
                 System.out.print("No Solution!");
             }
         }
-
     }
 }

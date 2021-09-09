@@ -1,9 +1,8 @@
-package com.codegym;
+package Week1.IntroductionToJava;
 
 import java.util.Scanner;
 
-public class Main {
-
+public class ChangeNumberToWord {
     String ReadHundreds, ReadDozens, ReadUnits;
 
     public static String ReadU (int x) {
@@ -83,16 +82,16 @@ public class Main {
     }
 
     public static void main(String[] args) {
-	Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-    int number;
-    System.out.print("Enter your number from 0 to 999: ");
-    number = scanner.nextInt();
-    String str = "";
+        int number;
+        System.out.print("Enter your number from 0 to 999: ");
+        number = scanner.nextInt();
+        String str = "";
 
-    int Hundreds = number / 100;
-    int Dozens = number % 100;
-    int Units = number % 10;
+        int Hundreds = number / 100;
+        int Dozens = number % 100;
+        int Units = number % 10;
 
         if (number > 999 || number < 0) {
             str = "Out of ability!";

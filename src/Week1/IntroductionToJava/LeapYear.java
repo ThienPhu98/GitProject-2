@@ -1,9 +1,8 @@
-package com.codegym;
+package Week1.IntroductionToJava;
 
 import java.util.Scanner;
 
-public class Main {
-
+public class LeapYear {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int year;
@@ -23,7 +22,6 @@ public class Main {
                 isLeapYear = true;
             }
         }
-
         if(isLeapYear){
             System.out.printf("%d is a leap year", year);
         } else {
