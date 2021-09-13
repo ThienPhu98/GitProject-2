@@ -5,20 +5,21 @@ import java.lang.String;
 
 public class CountLetterInString {
     public static void main(String[] args) {
-        String str = "adhiahbjrqjihncjndfm";
+        String str = "you can’t judge a book by its cover";
         Scanner scanner = new Scanner(System.in);
-        String letter = "";
+        char letter;
         int count = 0;
         System.out.println("String is: " + str);
 
+
         do {
             System.out.println("Enter the Letter: ");
-            letter = scanner.nextLine();
+            letter = scanner.nextLine().charAt(0);
             if (!Check(letter, str)){
                 System.out.println("There isn't that word in String");
             } else {
                 for (int j = 0; j < str.length(); j++){
-                    if (String.valueOf(letter) == String.valueOf(str.charAt(j))){
+                    if (letter == str.charAt(j)){
                         count++;
                         System.out.println("Found the letter '" + letter + "' at position: " + j);
                     }
@@ -29,12 +30,12 @@ public class CountLetterInString {
         if (count == 1) {
             System.out.println("There is 1 letter '"+ letter +"' has found in String");
         } else if (count > 1){
-            System.out.println("There are " + count + " letter '"+ letter +"' has found in String");
+            System.out.println("There are " + count + " letters '"+ letter +"' has found in String");
         }
     }
-    public static boolean Check(String letter, String str){
+    public static boolean Check(char letter, String str){
         for (int i = 0; i < str.length();i++){
-            if (String.valueOf(str.charAt(i)) == String.valueOf(letter)){
+            if (str.charAt(i) == letter){
                 return true;
             }
         }
