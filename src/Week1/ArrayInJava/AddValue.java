@@ -12,41 +12,47 @@ public class AddValue {
         array[4] = 8;
         array[5] = 1;
 
+        System.out.print("Array is: ");
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }
+
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the number you want to add: ");
+        System.out.print("\nEnter the number you want to add: ");
         int number = scanner.nextInt();
         int index = -1;
         do {
-            System.out.println("Enter the position you want to add: ");
+            System.out.print("\nEnter the position you want to add: ");
             index = scanner.nextInt();
-            if (!Check(index, array)){
-                System.out.println("The position is out of array!");
+            if (!checkItem(index, array)) {
+                System.out.print("\nThe position is out of array!");
             } else {
-                System.out.println("New Array: " + Add(number,index,array));
+                System.out.print("\nNew Array: " + addItem(number, index, array));
             }
-        } while (!Check(index, array));
-
+        } while (!checkItem(index, array));
     }
-    public static Boolean Check(int x, int[]array){
-        if (x < 0 || x > (array.length -1)){
+
+    public static Boolean checkItem(int x, int[] array) {
+        if (x < 0 || x > (array.length - 1)) {
             return false;
         }
         return true;
     }
-    public static String Add(int number, int index, int[]array){
+
+    public static String addItem(int number, int index, int[] array) {
         String str = "";
         int[] array2 = new int[10];
         array2[index] = number;
 
-        for (int i = 0; i < index; i++){
+        for (int i = 0; i < index; i++) {
             array2[i] = array[i];
         }
 
-        for (int j = index + 1; j < array2.length; j++){
-            array2[j] = array[j-1];
+        for (int j = index + 1; j < array2.length; j++) {
+            array2[j] = array[j - 1];
         }
 
-        for (int k = 0; k < array2.length; k++){
+        for (int k = 0; k < array2.length; k++) {
             str += array2[k] + " ";
         }
         return str;

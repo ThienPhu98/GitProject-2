@@ -3,8 +3,6 @@ package Week1.ClassOPPJava.QuadraticEquation;
 public class QuadraticEquation {
     double a,b,c;
 
-    public QuadraticEquation() {
-    }
     public QuadraticEquation(double a, double b, double c) {
         this.a = a;
         this.b = b;

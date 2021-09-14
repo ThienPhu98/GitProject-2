@@ -1,29 +1,43 @@
 package Week1.ClassOPPJava.StopWatch;
 
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
+        int [] array = new int[100000];
+
         StopWatch watch = new StopWatch();
-        Scanner scanner = new Scanner(System.in);
-        String request = "";
+        watch.Start();
 
-        do {
-            System.out.println("Enter 'begin' to start the Stopwatch: ");
-            request = scanner.nextLine().toString();
-            if (request.equals("begin")){
-                watch.Start();
+        randomArray(array);
+        sortArray(array);
+
+        System.out.print("Array is: ");
+        for (int j = 0; j < array.length; j++) {
+            System.out.print(array[j] + " ");
+        }
+
+        watch.End();
+        System.out.print("\n Time spend to work is: " + watch.getElapsedTimeSecs() + " second");
+    }
+
+
+    public static int[] randomArray(int[] array) {
+        for (int i = 0; i < array.length; i++){
+            array[i] = (int) (Math.random() * 100);
+        }
+        return array;
+    }
+
+    public static int[] sortArray(int[] array) {
+        int temp = array[0];
+        for (int i = 0 ; i < array.length - 1; i++) {
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[i] > array[j]) {
+                    temp = array[j];
+                    array[j] = array[i];
+                    array[i] = temp;
+                }
             }
-        } while (!request.equals("begin"));
-
-        do {
-            System.out.println("Enter 'end' to stop the Stopwatch: ");
-            request = scanner.nextLine();
-            if (request.equals("end")){
-                watch.End();
-                System.out.println("Elapsed time: " + watch.getElapsedTimeSecs() + " second");
-            }
-        } while (!request.equals("end"));
-
+        }
+        return array;
     }
 }

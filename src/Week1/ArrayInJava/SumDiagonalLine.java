@@ -9,10 +9,10 @@ public class SumDiagonalLine {
         Scanner scanner = new Scanner(System.in);
 
         do {
-            System.out.println("Enter the length for the side of the square: ");
+            System.out.print("\nEnter the length for the side of the square: ");
             size = scanner.nextInt();
             if (size > 5 || size < 1) {
-                System.out.println("Size can not accept!!!");
+                System.out.print("\nSize can not accept!!!");
             }
         } while (size > 5 || size < 1);
 

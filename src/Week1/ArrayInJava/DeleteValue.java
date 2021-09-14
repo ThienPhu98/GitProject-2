@@ -15,18 +15,23 @@ public class DeleteValue {
         int number = -1;
 
         Scanner scanner = new Scanner(System.in);
+        System.out.print("Array is: ");
+        for (int i = 0; i < array.length; i++){
+            System.out.print(array[i] + " ");
+        }
+
 
         do {
-            System.out.println("Enter a number you want to delete in Array: ");
+            System.out.print("\nEnter a number you want to delete in Array: ");
             number = scanner.nextInt();
-            if (!Check(number, array)){
-                System.out.println("The number input isn't in Array!");
+            if (!checkNumber(number, array)){
+                System.out.print("\nThe number input isn't in Array!");
             } else {
-                System.out.println("Value of Array: " + Delete(number, array));
+                System.out.print("\nValue of Array: " + deleteNumber(number, array));
             }
-        } while (!Check(number, array));
+        } while (!checkNumber(number, array));
     }
-    public static boolean Check(int x, int[]array){
+    public static boolean checkNumber(int x, int[]array){
         for (int i = 0; i < array.length; i++){
             if (x == array[i]){
                 return true;
@@ -34,7 +39,7 @@ public class DeleteValue {
         }
         return false;
     }
-    public static String Delete(int x, int[]array){
+    public static String deleteNumber(int x, int[]array){
         String str = " ";
         for (int i = 0; i < array.length; i++){
             if (x == array[i]){

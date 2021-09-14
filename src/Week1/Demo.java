@@ -2,7 +2,20 @@ package Week1;
 
 public class Demo {
     public static void main(String[] args) {
-        int a = (int)Math.round(12 * Math.random()) + 5;
-        System.out.print(a);
+        A a = new A();
+        a.p(10);
+        a.p(10.0);
+    }
+}
+
+class A extends B {
+    public void p(int number) {
+        System.out.println(number);
+    }
+}
+
+class B {
+    public void p(double number) {
+        System.out.println(number * 2);
     }
 }
