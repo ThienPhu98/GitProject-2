@@ -2,16 +2,46 @@ package Week3.Framework.Pack4;
 
 import java.util.*;
 
-public class ProductManager extends ArrayList<Product> implements Comparator<Product> {
+public class ProductManager {
+    public ArrayList<Product> productList;
 
-    @Override
-    public int compare(Product o1, Product o2) {
-        if(o1.getPrice() > o2.getPrice()){
-            return 1;
-        }else if(o1.getPrice() == o2.getPrice()){
-            return 0;
-        }else{
-            return -1;
-        }
+    public ProductManager() {
+        productList = new ArrayList<>();
     }
+
+    public void add(Product product) {
+      productList.add(product);
+    }
+
+    public void change(int index, Product o) {
+        productList.set(index, o);
+    }
+
+    public void remove(int index) {
+        productList.remove(index);
+    }
+
+    public int indexOf(String name) {
+        int position = -1;
+        for (int i = 0; i < productList.size(); i++) {
+            Product product = productList.get(i);
+            if (product.getName().equalsIgnoreCase(name)) {
+                return position = i;
+            }
+        }
+        return position;
+    }
+
+    public Object get(int index) {
+        return productList.get(index);
+    }
+
+    public int size() {
+        return productList.size();
+    }
+
+    public void sort(){
+            productList.sort(new PriceSort());
+    }
+
 }
