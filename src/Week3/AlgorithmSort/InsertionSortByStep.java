@@ -8,13 +8,16 @@ public class InsertionSortByStep {
         for(int i = 1; i < array.length; i++){
             x = array[i];
             pos = i;
+            System.out.print("\nLet x = " + array[i] + " with index: " + i);
             while(pos > 0 && x < array[pos-1]){
-                System.out.print("\nChange element:" + array[pos] +" in index " + pos + " to element:" + array[pos - 1] +" in index " + (pos-1));
+                System.out.print("\nChange element in index '" + pos + "' = element in index '" + (pos - 1) +"' (" + array[pos-1] + ")");
                 array[pos] = array[pos-1];
 
                 pos--;
             }
             array[pos] = x;
+            System.out.print("\nLet element in index '" + pos + "' = " + x);
+            System.out.print("\n===========================================================================");
         }
     }
 

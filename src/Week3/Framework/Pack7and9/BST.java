@@ -1,4 +1,4 @@
-package Week3.Framework.Pack9;
+package Week3.Framework.Pack7and9;
 
 public class BST<E extends Comparable<E>> extends AbstractTree<E> {
     protected TreeNode<E> root;
@@ -35,6 +35,59 @@ public class BST<E extends Comparable<E>> extends AbstractTree<E> {
         }
         size++;
         return true;
+    }
+
+    @Override
+    public TreeNode<E> remove(E e) {
+        return removeItem(e, root);
+    }
+
+    protected TreeNode<E> removeItem(E element, TreeNode<E> current) {
+        if (current == null) {
+            return current;
+        }
+        if (current.element.compareTo(element) == 0) {
+            if (current.left == null) {
+                return current.right;
+            } else if (current.right == null) {
+                return current.left;
+            }
+            current.element = minValue(current.right);
+            current.right = removeItem(current.element, current.right);
+        } else if (current.element.compareTo(element) > 0) {
+            removeItem(element, current.left);
+        } else if (current.element.compareTo(element) < 0) {
+            removeItem(element, current.right);
+        }
+        return current;
+    }
+
+    protected E minValue(TreeNode<E> current) {
+        E value = current.element;
+        while (current.left != null) {
+            value = current.left.element;
+            current = current.left;
+        }
+        return value;
+    }
+
+    @Override
+    public boolean search(E e) {
+        return searchItem(e, root);
+    }
+
+    protected boolean searchItem(E key, TreeNode<E> current) {
+        if (current == null) {
+            return false;
+        }
+        if (current.element.compareTo(key) == 0) {
+            return true;
+        } else if (current.element.compareTo(key) < 0) {
+            return searchItem(key, current.right);
+        } else if (current.element.compareTo(key) > 0) {
+            return searchItem(key, current.left);
+        }
+        return false;
     }
 
     protected TreeNode<E> createNewNode(E e) {
