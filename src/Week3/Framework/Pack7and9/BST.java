@@ -46,7 +46,11 @@ public class BST<E extends Comparable<E>> extends AbstractTree<E> {
         if (current == null) {
             return current;
         }
-        if (current.element.compareTo(element) == 0) {
+        if (current.element.compareTo(element) > 0) {
+            current.left = removeItem(element, current.left);
+        } else if (current.element.compareTo(element) < 0) {
+            current.right = removeItem(element, current.right);
+        } else {
             if (current.left == null) {
                 return current.right;
             } else if (current.right == null) {
@@ -54,10 +58,6 @@ public class BST<E extends Comparable<E>> extends AbstractTree<E> {
             }
             current.element = minValue(current.right);
             current.right = removeItem(current.element, current.right);
-        } else if (current.element.compareTo(element) > 0) {
-            removeItem(element, current.left);
-        } else if (current.element.compareTo(element) < 0) {
-            removeItem(element, current.right);
         }
         return current;
     }
