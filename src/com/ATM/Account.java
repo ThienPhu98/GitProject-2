@@ -1,4 +1,4 @@
-package com;
+package com.ATM;
 
 public class Account {
     public String name = "Nguyen Phan Thien Phu";

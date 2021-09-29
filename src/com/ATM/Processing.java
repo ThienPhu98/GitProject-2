@@ -1,11 +1,11 @@
-package com;
+package com.ATM;
 
 import java.util.Scanner;
 import java.text.DecimalFormat;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
-public class Main {
+public class Processing {
 
     public static void main(String[] args) {
         DecimalFormat formatter = new DecimalFormat("###,###,###");

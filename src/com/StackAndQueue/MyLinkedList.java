@@ -1,6 +1,6 @@
-package Week2.List.Pack4;
+package com.StackAndQueue;
 
-public class LinkedList<E> {
+public class MyLinkedList<E> {
     private class Node{
         private Node next;
         private E data;
@@ -17,7 +17,7 @@ public class LinkedList<E> {
     private Node head;
     private int numNodes = 0;
 
-    public LinkedList() {
+    public MyLinkedList() {
     }
 
     public void add(int index, E element) {
@@ -50,11 +50,15 @@ public class LinkedList<E> {
 
     public void addLast(E e) {
         Node temp = head;
-        while (temp.next != null) {
-            temp = temp.next;
-        }
-        temp.next = new Node(e);
         numNodes++;
+        if (head == null) {
+            head = new Node(e);
+        } else {
+            while (temp.next != null) {
+                temp = temp.next;
+            }
+            temp.next = new Node(e);
+        }
     }
 
     public E remove(int index) {
@@ -101,11 +105,18 @@ public class LinkedList<E> {
         return numNodes;
     }
 
-    public LinkedList clone(){
+    public boolean isEmpty() {
+        if (numNodes == 0) {
+            return true;
+        }
+        return false;
+    }
+
+    public MyLinkedList clone(){
         if(numNodes == 0){
             throw new NullPointerException();
         }
-        LinkedList<E> temp = new LinkedList<E>();
+        MyLinkedList<E> temp = new MyLinkedList<E>();
         Node tempNode = head;
         temp.addFirst(tempNode.data);
         tempNode = tempNode.next;
@@ -178,4 +189,5 @@ public class LinkedList<E> {
             head = temp;
         }
     }
+
 }
