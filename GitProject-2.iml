@@ -26,5 +26,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="codegym-file-utils" level="project" />
+    <orderEntry type="library" name="java-collection-utils" level="project" />
   </component>
 </module>
